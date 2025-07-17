@@ -9,8 +9,7 @@ import { MediaGeneration } from '@/components/features/MediaGeneration'
 import { HistoryManager } from '@/components/features/HistoryManager'
 import { SidePanel, FloatingPanelButton } from '@/components/features/SidePanel'
 import { AgentBuilder } from '@/components/features/AgentBuilder'
-import { PCControl } from '@/components/features/PCControl'
-import { Automation } from '@/components/features/Automation'
+
 import { Settings } from '@/components/features/Settings'
 import { blink } from '@/blink/client'
 import { Sparkles, Bot } from 'lucide-react'
@@ -72,18 +71,7 @@ function App() {
             <AgentBuilder />
           </div>
         )
-      case 'pc-control':
-        return (
-          <div className="p-6">
-            <PCControl />
-          </div>
-        )
-      case 'automation':
-        return (
-          <div className="p-6">
-            <Automation />
-          </div>
-        )
+
       case 'settings':
         return (
           <div className="p-6">

@@ -5,7 +5,6 @@ import {
   MessageSquare, 
   BarChart3, 
   BookOpen, 
-  Target, 
   Users, 
   Lightbulb,
   TrendingUp,
@@ -88,23 +87,7 @@ const menuItems = [
     bgColor: 'bg-yellow-50',
     activeBg: 'bg-yellow-100'
   },
-  {
-    id: 'pc-control',
-    label: 'PC操作',
-    icon: Monitor,
-    badge: 'Beta',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50',
-    activeBg: 'bg-blue-100'
-  },
-  {
-    id: 'automation',
-    label: '自動化',
-    icon: Target,
-    color: 'text-emerald-600',
-    bgColor: 'bg-emerald-50',
-    activeBg: 'bg-emerald-100'
-  },
+
   {
     id: 'settings',
     label: '設定',
