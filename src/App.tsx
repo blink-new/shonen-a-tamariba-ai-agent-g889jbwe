@@ -3,8 +3,7 @@ import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { Dashboard } from '@/components/dashboard/Dashboard'
 import { AIChat } from '@/components/chat/AIChat'
-import { ScreenCapture } from '@/components/features/ScreenCapture'
-import { VoiceControl } from '@/components/features/VoiceControl'
+
 import { MediaGeneration } from '@/components/features/MediaGeneration'
 import { HistoryManager } from '@/components/features/HistoryManager'
 import { SidePanel, FloatingPanelButton } from '@/components/features/SidePanel'
@@ -41,18 +40,7 @@ function App() {
         return <AIChat />
       case 'dashboard':
         return <Dashboard onNavigate={handleTabChange} />
-      case 'screen-capture':
-        return (
-          <div className="p-6">
-            <ScreenCapture />
-          </div>
-        )
-      case 'voice-control':
-        return (
-          <div className="p-6">
-            <VoiceControl />
-          </div>
-        )
+
       case 'media-generation':
         return (
           <div className="p-6">

@@ -11,8 +11,7 @@ import {
   Pin,
   PinOff,
   Settings,
-  Monitor,
-  Mic,
+
   MessageSquare,
   Image,
   History,
@@ -21,8 +20,7 @@ import {
   RotateCcw
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { ScreenCapture } from './ScreenCapture'
-import { VoiceControl } from './VoiceControl'
+
 import { MediaGeneration } from './MediaGeneration'
 import { HistoryManager } from './HistoryManager'
 import { AIChat } from '../chat/AIChat'
@@ -65,9 +63,6 @@ export function SidePanel({ isOpen, onToggle, position, onPositionChange }: Side
       // AIチャットに質問を送信する処理
     } else {
       switch (command) {
-        case 'screen-capture':
-          setActiveTab('screen')
-          break
         case 'chat':
           setActiveTab('chat')
           break
@@ -200,30 +195,7 @@ export function SidePanel({ isOpen, onToggle, position, onPositionChange }: Side
             >
               <MessageSquare className="h-5 w-5" />
             </Button>
-            <Button
-              onClick={() => {
-                setActiveTab('screen')
-                setIsMinimized(false)
-              }}
-              variant="ghost"
-              size="icon"
-              className="w-full h-12"
-              title="画面キャプチャ"
-            >
-              <Monitor className="h-5 w-5" />
-            </Button>
-            <Button
-              onClick={() => {
-                setActiveTab('voice')
-                setIsMinimized(false)
-              }}
-              variant="ghost"
-              size="icon"
-              className="w-full h-12"
-              title="音声コントロール"
-            >
-              <Mic className="h-5 w-5" />
-            </Button>
+
             <Button
               onClick={() => {
                 setActiveTab('media')
@@ -243,15 +215,9 @@ export function SidePanel({ isOpen, onToggle, position, onPositionChange }: Side
         {!isMinimized && (
           <div className="flex-1 overflow-hidden">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col">
-              <TabsList className="grid w-full grid-cols-5 m-4 mb-2">
+              <TabsList className="grid w-full grid-cols-3 m-4 mb-2">
                 <TabsTrigger value="chat" className="text-xs">
                   <MessageSquare className="h-3 w-3" />
-                </TabsTrigger>
-                <TabsTrigger value="screen" className="text-xs">
-                  <Monitor className="h-3 w-3" />
-                </TabsTrigger>
-                <TabsTrigger value="voice" className="text-xs">
-                  <Mic className="h-3 w-3" />
                 </TabsTrigger>
                 <TabsTrigger value="media" className="text-xs">
                   <Image className="h-3 w-3" />
@@ -266,14 +232,6 @@ export function SidePanel({ isOpen, onToggle, position, onPositionChange }: Side
                   <div className="h-full">
                     <AIChat />
                   </div>
-                </TabsContent>
-
-                <TabsContent value="screen" className="mt-0">
-                  <ScreenCapture />
-                </TabsContent>
-
-                <TabsContent value="voice" className="mt-0">
-                  <VoiceControl onCommand={handleCommand} />
                 </TabsContent>
 
                 <TabsContent value="media" className="mt-0">

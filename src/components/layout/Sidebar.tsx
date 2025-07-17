@@ -12,8 +12,7 @@ import {
   Calculator,
   X,
   Crown,
-  Monitor,
-  Mic,
+
   Image,
   History
 } from 'lucide-react'
@@ -43,24 +42,7 @@ const menuItems = [
     bgColor: 'bg-emerald-50',
     activeBg: 'bg-emerald-100'
   },
-  {
-    id: 'screen-capture',
-    label: '画面キャプチャ',
-    icon: Monitor,
-    badge: 'AI分析',
-    color: 'text-cyan-600',
-    bgColor: 'bg-cyan-50',
-    activeBg: 'bg-cyan-100'
-  },
-  {
-    id: 'voice-control',
-    label: '音声コントロール',
-    icon: Mic,
-    badge: 'New',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-50',
-    activeBg: 'bg-purple-100'
-  },
+
   {
     id: 'media-generation',
     label: 'メディア生成',
